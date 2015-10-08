@@ -1,4 +1,6 @@
 var _ = require('lodash-node');
+var messages = require('./messages');
+var logger = require('../lib/logger');
 
 /**
  * ### HTTP
@@ -12,6 +14,7 @@ var _ = require('lodash-node');
  */
 function http(apiMethod) {
     return function apiHandler(req, res, next) {
+        console.log('apiHandler on the job');
 
         // We define 2 properties for using as arguments in API calls:
         var object = req.body;
@@ -26,6 +29,7 @@ function http(apiMethod) {
 
         return apiMethod(object, options).then(function(response) {
                 // Send a properly formatted HTTP response containing the data with correct headers
+                logger.log('info', 'this is the response ' + response);
                 res.json(response);
 
             })
@@ -38,3 +42,8 @@ function http(apiMethod) {
             });
     };
 }
+
+module.exports = {
+    http: http,
+    messages: messages
+};

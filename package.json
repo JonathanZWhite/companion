@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JonathanZWhite/companion",
   "devDependencies": {
+    "bluebird": "^2.10.2",
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "lodash-node": "^3.10.1",
