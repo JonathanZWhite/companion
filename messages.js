@@ -40,11 +40,6 @@ var Levenshtein = require('Levenshtein');
         var from = payload.From;
         var message = payload.Body;
 
-        // TODO: random chance to send Ryan or Jonathan
-        if (from !== config.jonathanPhoneNumber && from !== config.ryanPhoneNumber) {
-            send(config.jonathanPhoneNumber, from + ': ' + message);
-        }
-
         _replyManager(from, message);
     }
 

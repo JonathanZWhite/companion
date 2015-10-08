@@ -1,0 +1,27 @@
+{
+  "name": "companion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanZWhite/companion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanZWhite/companion/issues"
+  },
+  "homepage": "https://github.com/JonathanZWhite/companion",
+  "devDependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "lodash-node": "^3.10.1",
+    "nodemon": "^1.7.1",
+    "twilio": "^2.2.1",
+    "winston": "^1.0.2"
+  }
+}
