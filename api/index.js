@@ -36,7 +36,6 @@ function http(apiMethod) {
             .catch(next)
             .error(function(err) {
                 // operational error
-
                 logger.log('error', 'There was an error: ' + err);
                 next(err);
             });
