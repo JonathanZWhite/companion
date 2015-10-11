@@ -7,6 +7,10 @@ module.exports = {
         }
     },
     production: {
-        port: 80
+        port: 80,
+        api: {
+            weather: 'http://api.openweathermap.org/data/2.5/weather?',
+            jokes: 'https://www.reddit.com/r/Jokes/random.json'
+        }
     }
 }[process.env.NODE_ENV || 'development'];
