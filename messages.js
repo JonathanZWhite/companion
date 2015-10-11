@@ -4,7 +4,7 @@
 var config = require('./config/secrets');
 var client = require('twilio')(config.accountSid, config.authToken);
 var lang = require('./config/lang');
-var Levenshtein = require('Levenshtein');
+var Levenshtein = require('levenshtein');
 
 /**
  * Messages object that acts as a library for all
