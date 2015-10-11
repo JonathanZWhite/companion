@@ -4,6 +4,9 @@ module.exports = {
         api: {
             weather: 'http://api.openweathermap.org/data/2.5/weather?',
             jokes: 'https://www.reddit.com/r/Jokes/random.json'
+        },
+        secrets: {
+            fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE'
         }
     },
     production: {
@@ -11,6 +14,9 @@ module.exports = {
         api: {
             weather: 'http://api.openweathermap.org/data/2.5/weather?',
             jokes: 'https://www.reddit.com/r/Jokes/random.json'
+        },
+        secrets: {
+            fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE'
         }
     }
 }[process.env.NODE_ENV || 'development'];
