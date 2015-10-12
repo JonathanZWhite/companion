@@ -2,6 +2,7 @@ var config = require('../config/secrets');
 var client = require('twilio')(config.accountSid, config.authToken);
 var Promise = require('bluebird');
 var keywords = require('../config/keywords');
+var digest = require('../lib/digest');
 var weather = require('../lib/weather');
 var jokes = require('../lib/jokes');
 var photos = require('../lib/photos');
@@ -58,6 +59,8 @@ messages = {
                 return jokes.getJoke();
             case 'photos':
                 return photos.getInspiration();
+            case 'digest':
+                return digest.get();
             default:
                 console.log('NOTHING RECOGNIZED');
         }
