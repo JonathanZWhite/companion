@@ -6,10 +6,16 @@ module.exports = {
             weather: 'http://api.openweathermap.org/data/2.5/weather?APPID=e4b235bd79cec28cf3d11b98a692d209&',
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
             designerNews: 'https://www.designernews.co/?format=json',
-            medium: 'https://medium.com'
+            medium: 'https://medium.com',
+            productHunt: 'https://api.producthunt.com/v1/'
         },
         secrets: {
-            fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE'
+            fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE',
+            productHunt: {
+                token: '77da2bb84129cdd06d7809c98c508de8cf1fb128fbaea3d0761dabfad4a0462a',
+                key: '09290d0ecbb38d9881728d07b5ab64a1230681dde69be98850a20ade66be6973',
+                secret: '054bf2aa474418d291020b1aedccd7633d17a9a20b338dcbc9569be476f05215'
+            }
         }
     },
     production: {
