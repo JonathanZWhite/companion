@@ -16,10 +16,12 @@ messages = {
     receive: function(object, options) {
         var body = object.Body.toLowerCase();
         var keyword = messages._identifyRequest(body);
-        return messages._routeRequest(keyword).then(function(response) {
-            if (typeof response === 'object') messages._send(response);
-            else messages._send({ body: response });
-        });
+        // return messages._routeRequest(keyword).then(function(response) {
+        //     if (typeof response === 'object') messages._send(response);
+        //     else messages._send({ body: response });
+        // });
+
+        return messages._routeRequest(keyword);
     },
 
     _send: function(payload) {
