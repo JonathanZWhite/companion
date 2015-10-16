@@ -1,6 +1,7 @@
 module.exports = {
     local: {
         port: 3000,
+        mongo: process.env.MONGODB || 'mongodb://localhost:27017/companion',
         api: {
             weather: 'http://api.openweathermap.org/data/2.5/weather?APPID=e4b235bd79cec28cf3d11b98a692d209&',
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
@@ -13,6 +14,7 @@ module.exports = {
     },
     production: {
         port: 80,
+        mongo: process.env.MONGODB || 'mongodb://localhost:27017/companion',
         api: {
             weather: 'http://api.openweathermap.org/data/2.5/weather?APPID=e4b235bd79cec28cf3d11b98a692d209&',
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
