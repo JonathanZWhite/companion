@@ -1,9 +1,9 @@
 /*jslint node: true */
 'use strict';
 
-var mongoose =  require('mongoose');
-var Schema = mongoose.Schema;
 var Promise = require('bluebird');
+var mongoose =  Promise.promisifyAll(require('mongoose'));
+var Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
     title: String,
@@ -16,4 +16,5 @@ var DigestSchema = new Schema({
     articles: [ArticleSchema]
 });
 
-module.exports = Promise.promisifyAll(mongoose.model('Digest', DigestSchema));
+// module.exports = Promise.promisifyAll(mongoose.model('Digest', DigestSchema));
+module.exports = mongoose.model('Digest', DigestSchema);

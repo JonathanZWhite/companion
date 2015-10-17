@@ -1,4 +1,5 @@
 var _ = require('lodash-node');
+var digest = require('./digest');
 var messages = require('./messages');
 var logger = require('../lib/logger');
 
@@ -27,24 +28,25 @@ function http(apiMethod) {
             options = {};
         }
 
-        // return apiMethod(object, options).then(function(response) {
-        //         // Send a properly formatted HTTP response containing the data with correct headers
-        //         logger.log('info', 'this is the response ' + response);
-        //         res.json(response);
-        //
-        //     })
-        //     .catch(next)
-        //     .error(function(err) {
-        //         // operational error
-        //         logger.log('error', 'There was an error: ' + err);
-        //         next(err);
-        //     });
+        return apiMethod(object, options).then(function(response) {
+                // Send a properly formatted HTTP response containing the data with correct headers
+                logger.log('info', 'this is the response ' + response);
+                res.json(response);
 
-        return apiMethod(object, options);
+            })
+            .catch(next)
+            .error(function(err) {
+                // operational error
+                logger.log('error', 'There was an error: ' + err);
+                next(err);
+            });
+
+        // return apiMethod(object, options);
     };
 }
 
 module.exports = {
     http: http,
-    messages: messages
+    messages: messages,
+    digest: digest
 };
