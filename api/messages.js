@@ -5,6 +5,7 @@ var keywords = require('../config/keywords');
 var digest = require('../lib/digest');
 var weather = require('../lib/weather');
 var jokes = require('../lib/jokes');
+var notes = require('../lib/notes');
 var photos = require('../lib/photos');
 var twillio = require('../lib/twillio');
 var messages;
@@ -17,7 +18,7 @@ messages = {
     receive: function(object, options) {
         var body = object.Body.toLowerCase();
         var keyword = messages._identifyRequest(body);
-        return messages._routeRequest(keyword).then(function(response) {
+        return messages._routeRequest(keyword, body).then(function(response) {
             if (typeof response === 'object') messages._send(response);
             else messages._send({ body: response });
         });
@@ -39,7 +40,7 @@ messages = {
         return keyword;
     },
 
-    _routeRequest: function(keyword) {
+    _routeRequest: function(keyword, body) {
         switch (keyword) {
             case 'weather':
                 return weather.getToday();
@@ -49,6 +50,8 @@ messages = {
                 return photos.getInspiration();
             case 'digest':
                 return digest.get();
+            case 'notes':
+                return notes.createNote(body);
             default:
                 return Promise.reject();
         }

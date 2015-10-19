@@ -21,6 +21,7 @@
     "bluebird": "^2.10.2",
     "body-parser": "^1.13.2",
     "cors": "^2.7.1",
+    "cron": "^1.0.9",
     "designer-news": "^0.1.1",
     "express": "^4.13.1",
     "levenshtein": "^1.0.5",

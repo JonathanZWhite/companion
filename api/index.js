@@ -1,6 +1,7 @@
 var _ = require('lodash-node');
 var digest = require('./digest');
 var messages = require('./messages');
+var notes = require('./notes');
 var logger = require('../lib/logger');
 
 /**
@@ -48,5 +49,6 @@ function http(apiMethod) {
 module.exports = {
     http: http,
     messages: messages,
-    digest: digest
+    digest: digest,
+    notes: notes
 };
