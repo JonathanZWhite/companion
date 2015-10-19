@@ -6,6 +6,7 @@ var digest = require('../lib/digest');
 var weather = require('../lib/weather');
 var jokes = require('../lib/jokes');
 var photos = require('../lib/photos');
+var twillio = require('../lib/twillio');
 var messages;
 
 messages = {
@@ -20,26 +21,10 @@ messages = {
             if (typeof response === 'object') messages._send(response);
             else messages._send({ body: response });
         });
-
-        // return messages._routeRequest(keyword);
     },
 
     _send: function(payload) {
-        var options = {
-            to: config.secrets.twillio.jonathanPhoneNumber,
-            from: config.secrets.twillio.phoneNumber,
-            body: payload.body
-        };
-
-        if (payload.mediaUrl) options.mediaUrl = payload.mediaUrl;
-
-        client.sendMessage(options, function(err, resp) {
-            console.log(err);
-            if (!err) {
-                console.log(resp.from); // outputs "+14506667788"
-                console.log(resp.body); // outputs "word to your mother."
-            }
-        });
+        twillio.send(payload);
     },
 
     _identifyRequest: function(body) {
@@ -65,7 +50,7 @@ messages = {
             case 'digest':
                 return digest.get();
             default:
-                console.log('NOTHING RECOGNIZED');
+                return Promise.reject();
         }
     }
 };
