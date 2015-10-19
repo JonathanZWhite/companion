@@ -55,7 +55,7 @@ messages = {
             case 'links':
                 return Promise.resolve('I\'ll only do this once (¬_¬) ' + config.hosts.client + 'notes');
             default:
-                return Promise.reject();
+                return Promise.resolve('Sorry... I\'m not too smart yet. I don\'t know what you want me to do (っ- ‸ – ς)');
         }
     }
 };
