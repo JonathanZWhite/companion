@@ -1,5 +1,5 @@
 module.exports = {
-    local: {
+    development: {
         port: 3000,
         mongo: process.env.MONGODB || 'mongodb://localhost:27017/companion',
         api: {

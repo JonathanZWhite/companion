@@ -1,6 +1,7 @@
 var digest;
 var Promise = require('bluebird');
 var DigestSchema = require('../models/digest');
+var Digest = require('../lib/digest');
 
 digest = {
     getFeed: function() {
@@ -9,6 +10,10 @@ digest = {
             .sort({ 'created': 'desc' })
             .limit(1)
             .execAsync();
+    },
+
+    generate: function() {
+        return Digest.generate();
     }
 };
 
