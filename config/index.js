@@ -9,6 +9,10 @@ module.exports = {
             medium: 'https://medium.com',
             productHunt: 'https://api.producthunt.com/v1/'
         },
+        hosts: {
+            self: 'http://localhost:3000/',
+            client: 'http://localhost:9000/'
+        },
         secrets: {
             fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE',
             productHunt: {
@@ -26,6 +30,10 @@ module.exports = {
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
             designerNews: 'https://www.designernews.co/?format=json',
             medium: 'https://medium.com/top-stories?format=json'
+        },
+        hosts: {
+            self: 'http://api.usecompanion.com/',
+            client: 'http://usecompanion.com/'
         },
         secrets: {
             fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE'
