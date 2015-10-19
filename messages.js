@@ -1,8 +1,8 @@
 /*jslint node: true */
 'use strict';
 
-var config = require('./config/secrets');
-var client = require('twilio')(config.accountSid, config.authToken);
+var config = require('./config');
+var client = require('twilio')(config.secrets.twillio.accountSid, config.secrets.twillio.authToken);
 var lang = require('./config/lang');
 var Levenshtein = require('levenshtein');
 
@@ -21,7 +21,7 @@ var Levenshtein = require('levenshtein');
 
         client.sendMessage({
             to: to,
-            from: config.phoneNumber,
+            from: config.secrets.twillio.phoneNumber,
             body: message
         }, function(err, resp) {
             if (!err) {

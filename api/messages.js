@@ -1,5 +1,5 @@
-var config = require('../config/secrets');
-var client = require('twilio')(config.accountSid, config.authToken);
+var config = require('../config');
+var client = require('twilio')(config.secrets.twillio.accountSid, config.secrets.twillio.authToken);
 var Promise = require('bluebird');
 var keywords = require('../config/keywords');
 var digest = require('../lib/digest');
@@ -26,8 +26,8 @@ messages = {
 
     _send: function(payload) {
         var options = {
-            to: config.jonathanPhoneNumber,
-            from: config.phoneNumber,
+            to: config.secrets.twillio.jonathanPhoneNumber,
+            from: config.secrets.twillio.phoneNumber,
             body: payload.body
         };
 

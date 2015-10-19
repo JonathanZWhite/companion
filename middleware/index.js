@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var config = require('../config/secrets');
+var config = require('../config');
 var cors = require('cors');
 
 module.exports = function(app) {
