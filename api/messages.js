@@ -52,6 +52,8 @@ messages = {
                 return digest.get();
             case 'notes':
                 return notes.createNote(body);
+            case 'links':
+                return Promise.resolve('I\'ll only do this once (¬_¬) ' + config.hosts.client + 'notes');
             default:
                 return Promise.reject();
         }

@@ -3,7 +3,8 @@ var keywords = {
 	jokes: ['joke', 'funny', 'laugh', 'humor', 'jest', 'amuse', 'laughing', 'funniest', 'hilarious', 'jokes', 'comedic', 'comedy'],
 	photos: ['photo', 'photos', 'inspire', 'inspiration'],
 	digest: ['digest', 'summarize', 'digest', 'new', 'news', 'latest', 'hacker', 'designer', 'digests', 'feed', 'recent'],
-	notes: ['note:', 'note']
+	notes: ['note:', 'note'],
+	links: ['link', 'links', 'stored']
 };
 
 module.exports = keywords;
