@@ -7,7 +7,8 @@ module.exports = {
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
             designerNews: 'https://www.designernews.co/?format=json',
             medium: 'https://medium.com',
-            productHunt: 'https://api.producthunt.com/v1/'
+            productHunt: 'https://api.producthunt.com/v1/',
+            newYorkTimes: 'http://api.nytimes.com/svc/topstories/v1/'
         },
         hosts: {
             self: 'http://localhost:3000/',
@@ -15,6 +16,9 @@ module.exports = {
         },
         secrets: {
             fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE',
+            newYorkTimes: {
+                key: 'b84d8e6c006a74d7e6323952db0c6a41:8:73257389'
+            },
             productHunt: {
                 token: '77da2bb84129cdd06d7809c98c508de8cf1fb128fbaea3d0761dabfad4a0462a',
                 key: '09290d0ecbb38d9881728d07b5ab64a1230681dde69be98850a20ade66be6973',
@@ -35,15 +39,19 @@ module.exports = {
             weather: 'http://api.openweathermap.org/data/2.5/weather?APPID=e4b235bd79cec28cf3d11b98a692d209&',
             jokes: 'https://www.reddit.com/r/Jokes/random.json',
             designerNews: 'https://www.designernews.co/?format=json',
-            medium: 'https://medium.com/top-stories?format=json',
-            productHunt: 'https://api.producthunt.com/v1/'
+            medium: 'https://medium.com',
+            productHunt: 'https://api.producthunt.com/v1/',
+            newYorkTimes: 'http://api.nytimes.com/svc/topstories/v1/'
         },
         hosts: {
-            self: 'http://api.usecompanion.com/',
-            client: 'http://usecompanion.com/'
+            self: 'http://localhost:3000/',
+            client: 'http://localhost:9000/'
         },
         secrets: {
             fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE',
+            newYorkTimes: {
+                key: 'b84d8e6c006a74d7e6323952db0c6a41:8:73257389'
+            },
             productHunt: {
                 token: '77da2bb84129cdd06d7809c98c508de8cf1fb128fbaea3d0761dabfad4a0462a',
                 key: '09290d0ecbb38d9881728d07b5ab64a1230681dde69be98850a20ade66be6973',
