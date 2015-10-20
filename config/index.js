@@ -44,9 +44,9 @@ module.exports = {
             newYorkTimes: 'http://api.nytimes.com/svc/topstories/v1/'
         },
         hosts: {
-            self: 'http://localhost:3000/',
-            client: 'http://localhost:9000/'
-        },
+           self: 'http://api.usecompanion.com/',
+           client: 'http://usecompanion.com/'
+       },
         secrets: {
             fivehundred: 'fvBwAoIcjbY59JuTcarJJNFWffYeD5l3lWIkBOBE',
             newYorkTimes: {
